@@ -1,0 +1,152 @@
+{
+  "status": true,
+  "data": [
+    {
+      "type":"image",
+      "width": 200,
+      "height": 200,
+      "margin": {
+        "margin_top": 50,
+        "margin_start": 0,
+        "margin_end": 0,
+        "margin_bottom": 0
+      },
+      "position": "top"
+    },
+    {
+      "type": "column",
+      "content": [
+        {
+          "type": "textField",
+          "maxLines": 1,
+          "keyboardType": "emial",
+          "textInputAction": "next",
+          "textAlign": "start",
+          "textCapitalization": "none",
+          "textDirection": "ltr",
+          "textAlignVertical": "top",
+          "obscureText": false,
+          "cursorColor": "#FC3F1B",
+          "style": {
+            "color": "#000000"
+          },
+          "decoration": {
+            "hintText": "What do people call you?",
+            "filled": true,
+            "icon": {
+              "type": "icon",
+              "iconType": "cupertino",
+              "icon": "person_solid",
+              "size": 24
+            },
+            "hintStyle": {
+              "color": "#797979"
+            },
+            "labelText": "Email",
+            "fillColor": "#F2F2F2"
+          },
+          "enabled": true,
+          "round_corner": true,
+          "border_color": "#000000",
+          "border_width": 1
+        },
+        {
+          "type": "textField",
+          "maxLines": 1,
+          "keyboardType": "password",
+          "textInputAction": "next",
+          "textAlign": "start",
+          "textCapitalization": "none",
+          "textDirection": "ltr",
+          "textAlignVertical": "top",
+          "obscureText": false,
+          "cursorColor": "#FC3F1B",
+          "style": {
+            "color": "#000000"
+          },
+          "decoration": {
+            "hintText": "Enter your password",
+            "filled": true,
+            "icon": {
+              "type": "icon",
+              "iconType": "cupertino",
+              "icon": "person_solid",
+              "size": 24
+            },
+            "hintStyle": {
+              "color": "#797979"
+            },
+            "labelText": "Email",
+            "fillColor": "#F2F2F2"
+          },
+          "enabled": true,
+          "round_corner": true,
+          "border_color": "#000000",
+          "border_width": 1
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "content": [
+        {
+          "type": "image_button",
+          "image_url": "",
+          "id": "social_google_login",
+          "height": 32,
+          "width": 32,
+          "margin": {
+            "margin_top": 50,
+            "margin_start": 16,
+            "margin_end": 10,
+            "margin_bottom": 0
+          }
+        },
+        {
+          "type": "image_button",
+          "image_url": "",
+          "id": "social_facebook_login",
+          "height": 32,
+          "width": 32,
+          "margin": {
+            "margin_top": 50,
+            "margin_start": 0,
+            "margin_end": 10,
+            "margin_bottom": 0
+          }
+        },
+        {
+          "type": "image_button",
+          "image_url": "",
+          "id": "social_twitter_login",
+          "height": 32,
+          "width": 32,
+          "margin": {
+            "margin_top": 50,
+            "margin_start": 0,
+            "margin_end": 16,
+            "margin_bottom": 0
+          }
+        }
+      ]
+    },
+    {
+      "type": "elevatedButton",
+      "content": {
+        "type": "text",
+        "data": "Otp"
+      },
+      "style": {
+        "backgroundColor": "#4D00E9",
+        "padding": {
+          "top": 8,
+          "left": 12,
+          "right": 12,
+          "bottom": 8
+        }
+      },
+      "onPressed": {
+      }
+    }
+  ]
+}

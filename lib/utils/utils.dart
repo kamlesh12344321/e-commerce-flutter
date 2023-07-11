@@ -34,4 +34,34 @@ class Utils {
        )..show(context),
    );
   }
+
+static Alignment widgetAlignment(String alignment){
+   switch(alignment){
+     case "top_left" : {
+       return Alignment.topLeft;
+     }
+     case "top_right" : {
+       return Alignment.topRight;
+     }
+     case "bottom_left" : {
+       return Alignment.bottomLeft;
+     }
+     case "bottom_right" : {
+       return Alignment.bottomRight;
+     }
+     case "bottom_center" : {
+       return Alignment.bottomCenter;
+     }
+     case "center_left" : {
+       return Alignment.centerLeft;
+     }
+     case "center_right" : {
+       return Alignment.centerRight;
+     }
+     default:
+       Alignment.center;
+   }
+   return Alignment.center;
+ }
+
 }

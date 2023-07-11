@@ -1,0 +1,211 @@
+{
+  "status": true,
+  "data": [
+    {
+      "type": "image",
+      "sub_type": "",
+      "width": 200,
+      "height": 100,
+      "image_url": "https://images.gorappid.com/uploads/logo.png",
+      "fit": "fill",
+      "margin": {
+        "margin_top": 10,
+        "margin_start": 16,
+        "margin_end": 16,
+        "margin_bottom": 0
+      },
+      "position": {
+        "horizontal_position": "center_left",
+        "vertical_position": "top"
+      }
+    },
+    {
+      "type": "column_items",
+      "sub_type": "edit_field",
+      "column_item": [
+        {
+          "type": "editField",
+          "sub_type": "",
+          "width": 0,
+          "height": 50,
+          "image_url": "",
+          "fit": "fill",
+          "edit_field": {
+            "round_corner": true,
+            "corner_radius": 20,
+            "corner_width": 2,
+            "level_text": "Email",
+            "corner_radius_color": "#FFFFFF",
+            "background": "#FFFFFF",
+            "curse_color": "#000000",
+            "hint": "Enter your email id",
+            "hint_color": "#000000",
+            "input_type": "emailAddress",
+            "text_padding": 20
+          },
+          "margin": {
+            "margin_top": 10,
+            "margin_start": 16,
+            "margin_end": 16,
+            "margin_bottom": 10
+          },
+          "position": {
+            "horizontal_position": "top_left",
+            "vertical_position": "center"
+          }
+        },
+        {
+          "type": "editField",
+          "width": 0,
+          "height": 50,
+          "sub_type": "",
+          "image_url": "",
+          "fit": "fill",
+          "edit_field": {
+            "round_corner": true,
+            "corner_radius": 20,
+            "corner_width": 2,
+            "level_text": "Password",
+            "corner_radius_color": "#FFFFFF",
+            "background": "#FFFFFF",
+            "curse_color": "#000000",
+            "hint": "Enter your email id",
+            "hint_color": "#000000",
+            "input_type": "password",
+            "text_padding": 20
+          },
+          "margin": {
+            "margin_top": 10,
+            "margin_start": 16,
+            "margin_end": 16,
+            "margin_bottom": 10
+          },
+          "position": {
+            "horizontal_position": "top_left",
+            "vertical_position": "center"
+          }
+        },
+        {
+          "type": "text",
+          "sub_type": "Sign-in ? Sign up via social media",
+          "width": 200,
+          "height": 30,
+          "image_url": "",
+          "fit": "fill",
+          "edit_field": {},
+          "row_items":[],
+          "margin": {
+            "margin_top": 10,
+            "margin_start": 16,
+            "margin_end": 16,
+            "margin_bottom": 0
+          },
+          "position": {
+            "horizontal_position": "center_left",
+            "vertical_position": "top"
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "row",
+      "row_items": [
+        {
+          "type": "image",
+          "sub_type": "",
+          "width": 100,
+          "height": 50,
+          "image_url": "https://images.gorappid.com/uploads/logo.png",
+          "fit": "fill",
+          "margin": {
+            "margin_top": 10,
+            "margin_start": 16,
+            "margin_end": 16,
+            "margin_bottom": 0
+          },
+          "position": {
+            "horizontal_position": "center_left",
+            "vertical_position": "top"
+          }
+        },
+        {
+          "type": "image",
+          "sub_type": "",
+          "width": 100,
+          "height": 50,
+          "image_url": "https://images.gorappid.com/uploads/logo.png",
+          "fit": "fill",
+          "margin": {
+            "margin_top": 10,
+            "margin_start": 16,
+            "margin_end": 16,
+            "margin_bottom": 0
+          },
+          "position": {
+            "horizontal_position": "center_left",
+            "vertical_position": "top"
+          }
+        },
+        {
+          "type": "image",
+          "sub_type": "",
+          "width": 100,
+          "height": 50,
+          "image_url": "https://images.gorappid.com/uploads/logo.png",
+          "fit": "fill",
+          "margin": {
+            "margin_top": 10,
+            "margin_start": 16,
+            "margin_end": 16,
+            "margin_bottom": 0
+          },
+          "position": {
+            "horizontal_position": "center_left",
+            "vertical_position": "top"
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "elevated_button",
+      "width": 100,
+      "height": 50,
+      "sub_type": "",
+      "image_url": "",
+      "fit": "fill",
+      "margin": {
+        "margin_top": 10,
+        "margin_start": 16,
+        "margin_end": 0,
+        "margin_bottom": 0
+      },
+      "position": {
+        "horizontal_position": "center_bottom",
+        "vertical_position": "top"
+      }
+    },
+    {
+      "type": "text",
+      "sub_type": "Privacy Policy",
+      "width": 200,
+      "height": 30,
+      "image_url": "",
+      "fit": "fill",
+      "edit_field": {},
+      "row_items":[],
+      "margin": {
+        "margin_top": 10,
+        "margin_start": 16,
+        "margin_end": 16,
+        "margin_bottom": 0
+      },
+      "position": {
+        "horizontal_position": "center_left",
+        "vertical_position": "top"
+      }
+    }
+  ]
+}
+
