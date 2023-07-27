@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../../model/login_screen_UI_model.dart';
 
-class EditFieldTemplate extends StatefulWidget {
-  const EditFieldTemplate({super.key, required this.editTextData});
-
+class EditFieldPassword extends StatefulWidget {
   final Data editTextData;
+  final ValueChanged<String> onChanged;
+
+  const EditFieldPassword({super.key, required this.editTextData, required this.onChanged});
 
   @override
-  State<EditFieldTemplate> createState() => _EditFieldTemplateState();
+  State<EditFieldPassword> createState() => _EditFieldPasswordState();
 }
 
-class _EditFieldTemplateState extends State<EditFieldTemplate> {
+class _EditFieldPasswordState extends State<EditFieldPassword> {
   @override
   Widget build(BuildContext context) {
     double? width;
@@ -30,10 +31,10 @@ class _EditFieldTemplateState extends State<EditFieldTemplate> {
       width: width,
       child: TextField(
         showCursor: true,
+        onChanged: widget.onChanged,
         cursorColor:
             hexToColor(widget.editTextData.editField!.background.toString()),
-        keyboardType: getTextInputType(
-            widget.editTextData.editField!.inputType!.toString()),
+        keyboardType: TextInputType.visiblePassword,
         decoration: InputDecoration(
           border: OutlineInputBorder(
              borderSide: BorderSide(
@@ -46,7 +47,7 @@ class _EditFieldTemplateState extends State<EditFieldTemplate> {
           )),
           fillColor:
               hexToColor(widget.editTextData.editField!.background.toString()),
-          labelText: widget.editTextData.editField!.levelText,
+          // labelText: widget.editTextData.editField!.levelText,
           hintText: widget.editTextData.editField!.hint,
           contentPadding: EdgeInsets.only(
               left: widget.editTextData.editField!.textPadding!.toDouble()),
@@ -54,24 +55,6 @@ class _EditFieldTemplateState extends State<EditFieldTemplate> {
       ),
       )
     );
-  }
-
-  TextInputType getTextInputType(String inputType) {
-    switch (inputType) {
-      case "emailAddress":
-        return TextInputType.emailAddress;
-      case "name":
-        return TextInputType.name;
-
-      case "number":
-        return TextInputType.number;
-
-      case "phone":
-        return TextInputType.phone;
-
-      default:
-        return TextInputType.text;
-    }
   }
 
   Color hexToColor(String hexString, {String alphaChannel = 'FF'}) {

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_flutter_new/model/login_screen_UI_model.dart';
 
 import '../../../res/string_constents.dart';
-import '../edit_field.dart';
+import '../../edit_fields/edit_field_name.dart';
 import '../image_view/image_view_login.dart';
+import '../test_widget/CommonTextView.dart';
 
 
 class RowComponent extends StatefulWidget {
@@ -18,21 +19,24 @@ class RowComponent extends StatefulWidget {
 class _RowComponentState extends State<RowComponent> {
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-        child:
-      Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        for (var item in widget.rowItems) ...[
-          if (item.type == StringConstents.image_type) ...[
-            ImageViewLogin(imageData: item)
-          ] else if (item.type == StringConstents.edit_field) ...[
-            EditFieldTemplate(editTextData: item)
+    return
+    SizedBox(
+      height: 60,
+      width: MediaQuery.of(context).size.width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          for (var item in widget.rowItems) ...[
+            if (item.type == StringConstents.image_type) ...[
+              ImageViewLogin(imageData: item)
+            ]else if (item.type == StringConstents.text) ...[
+              CommonTxtView(data: item)
+            ]
           ]
-        ]
-      ],
-      )
+        ],
+      ) ,
     );
+
 
   }
 }

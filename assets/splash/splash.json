@@ -3,23 +3,21 @@
   "data": [
     {
       "type": "image",
+      "sub_type": "",
       "width": 200,
-      "height": 200,
+      "height": 110,
       "image_url": "https://images.gorappid.com/uploads/logo.png",
       "fit": "fill",
       "margin": {
-        "margin_top": 50,
-        "margin_start": 0,
-        "margin_end": 0,
+        "margin_top": 10,
+        "margin_start": 16,
+        "margin_end": 16,
         "margin_bottom": 0
       },
       "position": {
         "horizontal_position": "center",
-        "vertical_position": "top"
-      },
-      "border_radius": 20,
-      "border_color": "#FFFFFF",
-      "border_width": 1
+        "vertical_position": "center"
+      }
     }
   ]
 }

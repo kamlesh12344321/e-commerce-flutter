@@ -9,19 +9,23 @@ import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 
 class NetworkApiService extends BaseApiService {
+
+
   @override
-  Future getExploreData(String url, String token) async {
+  Future homeExplore(String url, String token) async {
     dynamic responseJson;
-    _setHeaders() => {
+    setHeaders() => {
       'Content-Type': 'application/x-www-form-urlencoded',
       'Authorization': 'Bearer $token'
     };
     try{
-      final response = await http.get(Uri.parse(url), headers: _setHeaders()).timeout(const Duration(seconds: 10));
-      responseJson = returnResponse(response);
+      dynamic response = await http.get(Uri.parse(url),
+          headers: setHeaders()).timeout(const Duration(seconds: 10));
+      response = returnResponse(response);
     } on SocketException {
       throw FetchDataException("No Internet Connection");
     }
+
     return responseJson;
   }
 
@@ -34,7 +38,8 @@ class NetworkApiService extends BaseApiService {
     };
 
     try{
-      Response response = await http.post(Uri.parse(url), body: data, headers: _setHeaders()).timeout(Duration(seconds: 10));
+      Response response = await http.post(Uri.parse(url), body: data,
+          headers: _setHeaders()).timeout(const Duration(seconds: 10));
       responseJson = returnResponse(response);
     } on SocketException {
       throw FetchDataException("No Internet Connection");
@@ -47,12 +52,12 @@ class NetworkApiService extends BaseApiService {
   @override
   Future loginUser(String url,String token, data) async {
    dynamic responseJson;
-   _setHeaders() => {
+   setHeaders() => {
      'Content-Type': 'application/x-www-form-urlencoded',
      'Authorization': 'Bearer $token'
    };
    try {
-     Response response = await http.post(Uri.parse(url), body: data, headers: _setHeaders()).timeout(Duration(seconds: 10));
+     Response response = await http.post(Uri.parse(url), body: data, headers: setHeaders()).timeout(const Duration(seconds: 10));
      responseJson = returnResponse(response);
    } on SocketException {
      throw FetchDataException("No Internet Connection");
@@ -68,7 +73,8 @@ class NetworkApiService extends BaseApiService {
       'Authorization': 'Bearer $token'
     };
     try {
-      Response response = await http.post(Uri.parse(url), body: data, headers: _setHeaders()).timeout(Duration(seconds: 10));
+      Response response = await http.post(Uri.parse(url),
+          body: jsonEncode(data), headers: _setHeaders()).timeout(const Duration(seconds: 10));
       responseJson = returnResponse(response);
     } on SocketException {
       throw FetchDataException("No Internet Connection");
@@ -93,10 +99,5 @@ class NetworkApiService extends BaseApiService {
           throw FetchDataException("Error accoured while communicating with server"+"With status code : ${response.statusCode}");
     }
   }
-
-
-
-
-
 }
 

@@ -3,6 +3,7 @@ class AppUrls {
   static var baseUrl = "https://api.gorappid.com";
   static var registration =  "$baseUrl/user-registration";
   static var login = "$baseUrl/user-login";
+  static var homeExplore =  "$baseUrl/test";
 
 
 }

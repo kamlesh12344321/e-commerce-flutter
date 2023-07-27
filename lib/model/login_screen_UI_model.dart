@@ -54,10 +54,13 @@ class Data {
   Data({
       String? type,
       String? subType,
+      String? title,
       num? width,
       num? height,
+      bool? isEnabled,
       String? imageUrl,
       String? fit,
+      TextProperty? textProperty,
       List<Data>? rowItems,
       List<Data>? columnItems,
       Margin? margin,
@@ -66,8 +69,10 @@ class Data {
     _type = type;
     _width = width;
     _height = height;
+    _isEnabled = isEnabled;
     _imageUrl = imageUrl;
     _fit = fit;
+    _textProperty = textProperty;
     _rowItems = rowItems;
     _columnItems = columnItems;
     _margin = margin;
@@ -78,8 +83,10 @@ class Data {
   Data.fromJson(dynamic json) {
     _type = json['type'];
     _subType = json['sub_type'];
+    _title = json['title'];
     _width = json['width'];
     _height = json['height'];
+    _isEnabled = json['isEnabled'];
     _imageUrl = json['image_url'];
     _fit = json['fit'];
     if (json['row_items'] != null) {
@@ -94,16 +101,20 @@ class Data {
         _columnItems?.add(Data.fromJson(v));
       });
     }
+    _textProperty = json['text_property'] != null ? TextProperty.fromJson(json["text_property"]): null;
     _margin = json['margin'] != null ? Margin.fromJson(json['margin']) : null;
     _position = json['position'] != null ? Position.fromJson(json['position']) : null;
     _editField = json['edit_field'] != null ? EditFieldModel.fromJson(json['edit_field']) : null;
   }
   String? _type;
   String? _subType;
+  String? _title;
   num? _width;
   num? _height;
+  bool? _isEnabled;
   String? _imageUrl;
   String? _fit;
+  TextProperty? _textProperty;
   List<Data>? _rowItems;
   List<Data>? _columnItems;
   Margin? _margin;
@@ -111,10 +122,13 @@ class Data {
   EditFieldModel? _editField;
 Data copyWith({  String? type,
   String? subType,
+  String? title,
   num? width,
   num? height,
+  bool? isEnabled,
   String? imageUrl,
   String? fit,
+  TextProperty? textProperty,
   List<Data>? rowItems,
   List<Data>? columnItems,
   Margin? margin,
@@ -122,10 +136,13 @@ Data copyWith({  String? type,
   EditFieldModel? editField,
 }) => Data(  type: type ?? _type,
   subType: subType ?? _subType,
+  title: title ?? _title,
   width: width ?? _width,
   height: height ?? _height,
+  isEnabled: isEnabled ?? _isEnabled,
   imageUrl: imageUrl ?? _imageUrl,
   fit: fit ?? _fit,
+  textProperty: textProperty ?? _textProperty,
   rowItems: rowItems ?? _rowItems,
   columnItems: columnItems ?? _columnItems,
   margin: margin ?? _margin,
@@ -134,10 +151,13 @@ Data copyWith({  String? type,
 );
   String? get type => _type;
   String? get subType => _subType;
+  String? get title => _title;
   num? get width => _width;
   num? get height => _height;
+  bool? get isEnabled => _isEnabled;
   String? get imageUrl => _imageUrl;
   String? get fit => _fit;
+  TextProperty? get textProperty => _textProperty;
   List<Data>? get rowItems => _rowItems;
   List<Data>? get columnItems => _columnItems;
   Margin? get margin => _margin;
@@ -148,16 +168,22 @@ Data copyWith({  String? type,
     final map = <String, dynamic>{};
     map['type'] = _type;
     map["sub_type"] = _subType;
+    map["title"] = _title;
     map['width'] = _width;
     map['height'] = _height;
+    map['isEnabled'] = _isEnabled;
     map['image_url'] = _imageUrl;
     map['fit'] = _fit;
+    if(_textProperty != null){
+      map['text_property'] = _textProperty?.toJson();
+    }
     if (_rowItems != null) {
       map['row_items'] = _rowItems?.map((v) => v.toJson()).toList();
     }
     if (_columnItems != null) {
       map['column_item'] = _columnItems?.map((v) => v.toJson()).toList();
     }
+
     if (_margin != null) {
       map['margin'] = _margin?.toJson();
     }
@@ -255,5 +281,55 @@ Margin copyWith({  num? marginTop,
     map['margin_bottom'] = _marginBottom;
     return map;
   }
+
+}
+
+class TextProperty{
+ String? _textColor;
+  String? _fontWeight;
+  num? _fontSize;
+  num? _letterSpacing;
+
+ TextProperty({
+   String? textColor,
+   String? fontWeight,
+   num? fontSize,
+   num? letterSpacing,
+}) {
+   _textColor = textColor;
+   _fontWeight = fontWeight;
+   _fontSize = fontSize;
+   _letterSpacing = letterSpacing;
+
+ }
+ TextProperty.fromJson(dynamic json){
+   _textColor = json['text_color'];
+   _fontWeight = json['font_weight'];
+   _fontSize = json['font_size'];
+   _letterSpacing = json['letter_spacing'];
+ }
+ TextProperty copyWith({  String? textColor,
+   String? fontWeight,
+   num? fontSize,
+   num? letterSpacing,
+ }) => TextProperty(  textColor: textColor ?? _textColor,
+   fontWeight: fontWeight ?? _fontWeight,
+   fontSize: fontSize ?? _fontSize,
+   letterSpacing: letterSpacing ?? _letterSpacing,
+ );
+
+ String? get textColor => _textColor;
+ String? get fontWeight => _fontWeight;
+ num? get fontSize => _fontSize;
+ num? get letterSpacing => _letterSpacing;
+
+ Map<String, dynamic> toJson() {
+   final map = <String, dynamic>{};
+   map['text_color'] = _textColor;
+   map['font_weight'] = _fontWeight;
+   map['font_size'] = _fontSize;
+   map['letter_spacing'] = _letterSpacing;
+   return map;
+ }
 
 }

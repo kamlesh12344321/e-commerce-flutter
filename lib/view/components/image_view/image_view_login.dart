@@ -28,7 +28,8 @@ class _ImageViewLoginState extends State<ImageViewLogin> {
                 right: widget.imageData.margin!.marginEnd!.toDouble(),
                 top: widget.imageData.margin!.marginTop!.toDouble(),
                 bottom: widget.imageData.margin!.marginBottom!.toDouble()),
-            alignment:Utils.widgetAlignment(widget.imageData.position!.horizontalPosition!),
+            alignment:Alignment.center,
+            // alignment:Utils.widgetAlignment(widget.imageData.position!.horizontalPosition!),
             child: Image(
               width: width,
               alignment: Alignment.center,
