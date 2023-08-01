@@ -65,63 +65,82 @@ class _LoginScreenState extends State<LoginScreen> {
 
             return  SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  child:  Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        for (var item in items) ...[
-                          if (item.type == StringConstents.image_type) ...[
-                            ImageViewLogin(imageData: item)
-                          ] else if (item.type == StringConstents.image_type_banner) ...[
-                            ImageViewLoginBanner(imageData: item)
-                          ] else if (item.type == StringConstents.row_item) ...[
-                            RowComponent(rowItems: item.rowItems!),
-                          ]  else if(item.type == StringConstents.sized_box) ...[
-                            SizedBox(
-                              height: item.height!.toDouble(),
-                              width: item.width!.toDouble(),
-                            )
-                          ] else if (item.type == StringConstents.column_item) ...[
-                            ColumnItemComponent(
-                                columnData: item.columnItems!,
-                                from: StringConstents.fromLogin,
-                                emailController: myEmailController,
-                                passwordController: myPasswordController,
-                              ),
-                          ] else if (item.type ==
-                              StringConstents.elevated_button) ...[
-                            if (item.position!.horizontalPosition! ==
-                                "center_bottom") ...[
-                              Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Container(
-                                  color: Colors.white,
-                                  margin: const EdgeInsets.only(
-                                      left: 20, top: 0, right: 20, bottom: 5),
-                                  height: item.height!.toDouble(),
-                                  width: MediaQuery.of(context).size.width,
-                                  child: ElevatedButton(
-                                    onPressed: () {
-                                      String email = myEmailController.text;
-                                      String password = myPasswordController.text;
-                                      bool isEmailValid = Utils.isEmailValid(email);
-
-                                      if (isEmailValid && password.isNotEmpty) {
-
-                                      } else {
-                                        Utils.toastMessage(
-                                            "Please fill required fields");
-                                      }
-                                    },
-                                    child: const Text("Login"),
-                                  ),
+                  child:
+                  Stack(
+                    children: [
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Colors.transparent,
+                                    // Transparent color at the top
+                                    Colors.black.withOpacity(0.9),
+                                    // Semi-transparent black color at the bottom
+                                  ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
                                 ),
                               ),
+                            ),
+                            for (var item in items) ...[
+                              if (item.type == StringConstents.image_type) ...[
+                                ImageViewLogin(imageData: item)
+                              ] else if (item.type == StringConstents.image_type_banner) ...[
+                                ImageViewLoginBanner(imageData: item)
+                              ] else if (item.type == StringConstents.row_item) ...[
+                                RowComponent(rowItems: item.rowItems!),
+                              ]  else if(item.type == StringConstents.sized_box) ...[
+                                SizedBox(
+                                  height: item.height!.toDouble(),
+                                  width: item.width!.toDouble(),
+                                )
+                              ] else if (item.type == StringConstents.column_item) ...[
+                                ColumnItemComponent(
+                                  columnData: item.columnItems!,
+                                  from: StringConstents.fromLogin,
+                                  emailController: myEmailController,
+                                  passwordController: myPasswordController,
+                                ),
+                              ] else if (item.type ==
+                                  StringConstents.elevated_button) ...[
+                                if (item.position!.horizontalPosition! ==
+                                    "center_bottom") ...[
+                                  Align(
+                                    alignment: Alignment.bottomCenter,
+                                    child: Container(
+                                      color: Colors.white,
+                                      margin: const EdgeInsets.only(
+                                          left: 20, top: 0, right: 20, bottom: 5),
+                                      height: item.height!.toDouble(),
+                                      width: MediaQuery.of(context).size.width,
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                          String email = myEmailController.text;
+                                          String password = myPasswordController.text;
+                                          bool isEmailValid = Utils.isEmailValid(email);
+
+                                          if (isEmailValid && password.isNotEmpty) {
+
+                                          } else {
+                                            Utils.toastMessage(
+                                                "Please fill required fields");
+                                          }
+                                        },
+                                        child: const Text("Login"),
+                                      ),
+                                    ),
+                                  ),
+                                ]
+                              ] else if (item.type == StringConstents.text) ...[
+                                CommonTxtView(data: item)
+                              ]
                             ]
-                          ] else if (item.type == StringConstents.text) ...[
-                            CommonTxtView(data: item)
-                          ]
-                        ]
-                      ]),
+                          ])
+                    ],
+                  ),
 
             );
           }

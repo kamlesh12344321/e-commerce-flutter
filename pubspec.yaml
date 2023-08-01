@@ -44,6 +44,7 @@ dependencies:
   cached_network_image: ^3.2.3
   lottie: ^2.5.0
   shared_preferences: ^2.2.0
+  dots_indicator: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +82,7 @@ flutter:
      - assets/splash/
      - assets/images/
      - assets/registration/
+     - assets/practice/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

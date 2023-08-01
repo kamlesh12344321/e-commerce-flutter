@@ -4,6 +4,7 @@ import 'package:ecommerce_flutter_new/view/screens/SplashScreen.dart';
 import 'package:ecommerce_flutter_new/view/screens/destination_screen.dart';
 import 'package:ecommerce_flutter_new/view/screens/home_screen.dart';
 import 'package:ecommerce_flutter_new/view/screens/login_screen.dart';
+import 'package:ecommerce_flutter_new/view/screens/practice/LoginScreenPractice.dart';
 import 'package:ecommerce_flutter_new/view/screens/registration_screen.dart';
 import 'package:ecommerce_flutter_new/view/screens/see_all_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -23,7 +24,7 @@ class Routes {
 
       case RoutesName.login:
         return MaterialPageRoute(
-            builder: (BuildContext context) => const LoginScreen());
+            builder: (BuildContext context) => const LoginScreenPractice());
 
       case RoutesName.registration:
         return MaterialPageRoute(
